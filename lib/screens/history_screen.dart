@@ -227,7 +227,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       Icon(Icons.calendar_today_outlined, size: 14, color: Colors.grey[600]),
                       const SizedBox(width: 4),
                       Text(
-                        DateFormat('MMM dd, yyyy').format(transaction.date),
+                        DateFormat('MMM dd,').format(transaction.date),
                         style: GoogleFonts.inter(
                           color: Colors.grey[600],
                           fontSize: 13,
