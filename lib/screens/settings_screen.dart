@@ -251,7 +251,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               const SizedBox(width: 12),
               Text(
-                'About CreditClear',
+                'About Credit Clear',
                 style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -262,7 +262,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'CreditClear is your personal financial companion designed to help you track debts and lendings with ease. Manage your transactions, monitor repayment progress, and gain insights into your financial activities.',
+            'Credit Clear is your personal financial companion designed to help you track debts and lendings with ease. Manage your transactions, monitor repayment progress, and gain insights into your financial activities.',
             style: GoogleFonts.inter(
               fontSize: 14,
               color: Colors.grey[700],
@@ -272,9 +272,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: 16),
           Divider(color: Colors.grey[200]),
           const SizedBox(height: 16),
-          _buildInfoRow(Icons.check_circle_outline, 'Track personal debts and lendings'),
+          _buildInfoRow(
+            Icons.check_circle_outline,
+            'Track personal debts and lendings',
+          ),
           const SizedBox(height: 12),
-          _buildInfoRow(Icons.analytics_outlined, 'Visualize your financial data'),
+          _buildInfoRow(
+            Icons.analytics_outlined,
+            'Visualize your financial data',
+          ),
           const SizedBox(height: 12),
           _buildInfoRow(Icons.history, 'Complete payment history'),
           const SizedBox(height: 12),
@@ -292,10 +298,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         Expanded(
           child: Text(
             text,
-            style: GoogleFonts.inter(
-              fontSize: 13,
-              color: Colors.grey[700],
-            ),
+            style: GoogleFonts.inter(fontSize: 13, color: Colors.grey[700]),
           ),
         ),
       ],

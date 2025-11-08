@@ -9,7 +9,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   late AnimationController _scaleController;
   late AnimationController _fadeController;
   late AnimationController _rotationController;
@@ -46,13 +47,9 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       curve: Curves.easeIn,
     );
 
-    _rotationAnimation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(CurvedAnimation(
-      parent: _rotationController,
-      curve: Curves.easeInOutBack,
-    ));
+    _rotationAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _rotationController, curve: Curves.easeInOutBack),
+    );
 
     _startAnimation();
 
@@ -83,11 +80,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6C63FF),
-              Color(0xFF5A52D5),
-              Color(0xFF4842B0),
-            ],
+            colors: [Color(0xFF6C63FF), Color(0xFF5A52D5), Color(0xFF4842B0)],
           ),
         ),
         child: Center(
@@ -148,7 +141,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                 child: Column(
                   children: [
                     Text(
-                      'CreditClear',
+                      'Credit Clear',
                       style: GoogleFonts.inter(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,

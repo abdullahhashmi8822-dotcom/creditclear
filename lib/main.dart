@@ -13,14 +13,14 @@ import 'database/database_helper.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DatabaseHelper.instance.database;
-  
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-  
+
   runApp(const CreditClearApp());
 }
 
@@ -30,7 +30,7 @@ class CreditClearApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CreditClear',
+      title: 'Credit Clear',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -42,7 +42,6 @@ class CreditClearApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFFF8F9FD),
         appBarTheme: AppBarTheme(
           elevation: 0,
-          backgroundColor: Colors.transparent,
           iconTheme: const IconThemeData(color: Color(0xFF2D3142)),
           titleTextStyle: GoogleFonts.inter(
             fontSize: 20,
@@ -69,7 +68,10 @@ class CreditClearApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: Colors.red, width: 1),
           ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(

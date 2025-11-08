@@ -28,7 +28,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     setState(() => _isLoading = true);
     final stats = await DatabaseHelper.instance.getStatistics();
     final transactions = await DatabaseHelper.instance.getAllTransactions();
-    
+
     setState(() {
       _statistics = stats;
       _totalTransactions = transactions.length;
@@ -48,7 +48,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/settings').then((_) => _loadData());
+              Navigator.pushNamed(
+                context,
+                '/settings',
+              ).then((_) => _loadData());
             },
             icon: const Icon(Icons.settings_outlined),
           ),
@@ -105,15 +108,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-            child: const Icon(
-              Icons.person,
-              size: 50,
-              color: Color(0xFF6C63FF),
-            ),
+            child: const Icon(Icons.person, size: 50, color: Color(0xFF6C63FF)),
           ),
           const SizedBox(height: 16),
           Text(
-            'CreditClear User',
+            'Credit Clear User',
             style: GoogleFonts.inter(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -210,7 +209,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildStatCard(String title, String value, IconData icon, Color color, String subtitle) {
+  Widget _buildStatCard(
+    String title,
+    String value,
+    IconData icon,
+    Color color,
+    String subtitle,
+  ) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -256,10 +261,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: 4),
           Text(
             subtitle,
-            style: GoogleFonts.inter(
-              fontSize: 11,
-              color: Colors.grey[500],
-            ),
+            style: GoogleFonts.inter(fontSize: 11, color: Colors.grey[500]),
           ),
         ],
       ),
@@ -284,7 +286,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'See all your transactions',
           Icons.history,
           const Color(0xFF6C63FF),
-          () => Navigator.pushNamed(context, '/history').then((_) => _loadData()),
+          () =>
+              Navigator.pushNamed(context, '/history').then((_) => _loadData()),
         ),
         const SizedBox(height: 12),
         _buildActionCard(
@@ -292,7 +295,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'Check your financial insights',
           Icons.analytics_outlined,
           const Color(0xFF4CAF50),
-          () => Navigator.pushNamed(context, '/analytics').then((_) => _loadData()),
+          () => Navigator.pushNamed(
+            context,
+            '/analytics',
+          ).then((_) => _loadData()),
         ),
         const SizedBox(height: 12),
         _buildActionCard(
@@ -300,7 +306,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'Record a new debt or lending',
           Icons.add_circle_outline,
           const Color(0xFF2196F3),
-          () => Navigator.pushNamed(context, '/add-transaction').then((_) => _loadData()),
+          () => Navigator.pushNamed(
+            context,
+            '/add-transaction',
+          ).then((_) => _loadData()),
         ),
         const SizedBox(height: 12),
         _buildActionCard(
@@ -308,13 +317,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'Manage app preferences',
           Icons.settings_outlined,
           const Color(0xFF9C27B0),
-          () => Navigator.pushNamed(context, '/settings').then((_) => _loadData()),
+          () => Navigator.pushNamed(
+            context,
+            '/settings',
+          ).then((_) => _loadData()),
         ),
       ],
     );
   }
 
-  Widget _buildActionCard(String title, String subtitle, IconData icon, Color color, VoidCallback onTap) {
+  Widget _buildActionCard(
+    String title,
+    String subtitle,
+    IconData icon,
+    Color color,
+    VoidCallback onTap,
+  ) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
